@@ -1,26 +1,26 @@
 import React,{useEffect} from 'react';
 import styled from 'styled-components';
-import AOS from 'aos';
-import "aos/dist/aos.css";
-AOS.init();
+import {Link} from 'react-router-dom';
 
 function Recipes(props){
 
     const {image,label,source} = props.recipeItem.recipe;
     
     return(
-        <RecipesCard>
-            <RecipesCardBody>
-                <RecipesImageWrapper>
-                    <RecipesImage src={image}></RecipesImage>
-                </RecipesImageWrapper>
-                <RecipesOverlay></RecipesOverlay>
-            </RecipesCardBody>
-            <RecipesFooter>
-                <RecipesTitle>{label}</RecipesTitle>
-                <RecipesSource>by {source}</RecipesSource>
-            </RecipesFooter>
-        </RecipesCard>
+        <Link to='/details'>
+            <RecipesCard>
+                <RecipesCardBody>
+                    <RecipesImageWrapper>
+                        <RecipesImage src={image}></RecipesImage>
+                    </RecipesImageWrapper>
+                    <RecipesOverlay></RecipesOverlay>
+                </RecipesCardBody>
+                <RecipesFooter>
+                    <RecipesTitle>{label}</RecipesTitle>
+                    <RecipesSource>by {source}</RecipesSource>
+                </RecipesFooter>
+            </RecipesCard>
+        </Link>
     )   
 }
 

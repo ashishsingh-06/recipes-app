@@ -1,11 +1,11 @@
 import React from 'react';
 
-function About(){
+function Details(){
     return(
         <div className="container">
-        <h1>About Section</h1>
+            <h1>Details</h1>
         </div>
     )
 }
 
-export default About;
+export default Details;

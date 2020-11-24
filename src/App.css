@@ -54,3 +54,17 @@ input,button{
 section,footer{
   padding: 50px 0px;
 }
+
+.social-icons{
+  font-size: 26px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.social-icons:hover{
+  color: var(--primary-color);
+}
+
+.madeby{
+  display: block;
+}

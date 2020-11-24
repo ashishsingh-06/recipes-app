@@ -1,26 +1,29 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useContext} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {ApiContext} from '../Context';
 
 function Recipes(props){
-
+    const context = useContext(ApiContext);
     const {image,label,source} = props.recipeItem.recipe;
     
     return(
-        <Link to='/details'>
+        
             <RecipesCard>
-                <RecipesCardBody>
-                    <RecipesImageWrapper>
-                        <RecipesImage src={image}></RecipesImage>
-                    </RecipesImageWrapper>
-                    <RecipesOverlay></RecipesOverlay>
-                </RecipesCardBody>
+                    <RecipesCardBody onClick={()=>context.findRecipe(image)}>
+                        <Link to='/details'>
+                            <RecipesImageWrapper>
+                                <RecipesImage src={image}></RecipesImage>
+                            </RecipesImageWrapper>
+                            <RecipesOverlay></RecipesOverlay>
+                        </Link>
+                    </RecipesCardBody>
+                
                 <RecipesFooter>
                     <RecipesTitle>{label}</RecipesTitle>
                     <RecipesSource>by {source}</RecipesSource>
                 </RecipesFooter>
             </RecipesCard>
-        </Link>
     )   
 }
 
@@ -28,7 +31,7 @@ export default Recipes;
 
 const RecipesCard = styled.div`
     margin-bottom:40px;
-    width:240px;
+    width:250px;
     cursor:pointer;
 `
 const RecipesCardBody = styled.div`
@@ -51,7 +54,7 @@ const RecipesOverlay = styled.div`
 const RecipesImageWrapper = styled.div`
     width:100%;
     border-radius:10px;
-    height:160px;
+    height:150px;
     object-fit:cover;
     overflow:hidden;
 `

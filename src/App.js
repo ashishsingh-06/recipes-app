@@ -24,14 +24,14 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
+      <Context>
       <Switch>
-        <Context>
           <Route exact path='/' component={Home}></Route>
           <Route path='/about' component={About}></Route>
           <Route path='/details' component={Details}></Route>
-        </Context>
-        <Route component={Default}></Route>
+          <Route component={Default}></Route>
       </Switch>
+      </Context>
       <Footer></Footer>
     </>
   );

@@ -23,7 +23,7 @@ function RecipesList(){
             <RecipesContainer>
                 {
                     context.recipes.length!==[] && context.recipes.map((recipeItem)=>(
-                        <Recipes key={uuidv4()} recipeItem={recipeItem}></Recipes>
+                        <Recipes key={uuidv4()} recipeItem={recipeItem} onClick={context.findRecipe}></Recipes>
                     ))
                 }
             </RecipesContainer>
@@ -89,7 +89,7 @@ const SearchButton = styled.button`
 `
 
 const RecipesContainer = styled.div`
-    padding:50px 60px;
+    padding:50px 0px;
     display:flex;
     flex-wrap:wrap;
     justify-content:space-around;

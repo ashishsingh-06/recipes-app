@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 function Footer(){
     return(
-        <footer>
+        <footer data-aos="fade-right">
             <div className="container">
                 <FooterWrapper>
                     <Brand to='/'>Recipes</Brand>
@@ -41,6 +41,10 @@ const Brand = styled(Link)`
     color: var(--primary-color);
     font-family: var(--font-pacific);
     font-size: 30px;
+
+    @media(max-width:480px){
+        font-size:25px;
+    }
 `
 const SocialMediaWrapper = styled.div`
     display:flex;

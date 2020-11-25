@@ -6,10 +6,10 @@ import styled from 'styled-components';
 
 function Hero(){
    
-    const fadeInHero = useSpring({marginTop:0, from: {marginTop: -400,}});
+    // const fadeInHero = useSpring({marginTop:0, from: {marginTop: -400,}});
 
     return(
-        <animated.div style={fadeInHero}>
+        <animated.div>
             <HeroBackground>
                 <HeroContainer>
                     <HeadingWrapper> 
@@ -35,7 +35,6 @@ const HeroBackground = styled.div`
     background-size:cover;
     background-position:top;
     background-repeat:none;
-    box-shadow:0px 4px 16px rgba(0,0,0,0.5);
 `
 
 const HeroContainer = styled.div`
@@ -45,6 +44,10 @@ const HeroContainer = styled.div`
     margin-top:20px;
     margin-bottom: 50px;
     will-change: opacity;
+
+    @media(max-width:768px){
+        max-width:90%;
+    }
 `
 
 const HeadingWrapper = styled.div`
@@ -52,7 +55,7 @@ const HeadingWrapper = styled.div`
     max-width:100%;
     width:50%;
 
-    @media(max-width:480px){
+    @media(max-width:768px){
         padding:30px 0px;
         width:100%;
     }

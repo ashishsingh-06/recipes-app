@@ -60,6 +60,15 @@ export default RecipesList;
 const FormWrapper = styled.div`
     display:flex;
     justify-content:center;
+
+    @media(max-width:480px){
+        display:block;
+    }
+
+    @media(min-width:481px) and (max-width:768px){
+        justify-content:space-between;
+    }
+
 `
 
 const RecipesInputWrapper = styled.div`
@@ -68,6 +77,16 @@ const RecipesInputWrapper = styled.div`
     border-radius:5px;
     border:1px solid gainsboro;
     background-color:var(--input-background);
+
+    @media(max-width:480px){
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    @media(min-width:481px) and (max-width:768px){
+        width:75%;
+    }
+
 `
 const RecipesInput = styled.input`
     color:var(--secondary-color);
@@ -77,6 +96,11 @@ const RecipesInput = styled.input`
     margin-left:20px;
     width:80%;
     background-color:var(--input-background);
+
+    @media(max-width:768px){
+        margin-left:0px;
+        padding:10px 10px;
+    }
 `
 const SearchButton = styled.button`
     margin-left:20px;
@@ -86,6 +110,12 @@ const SearchButton = styled.button`
     padding:10px 20px;
     cursor:pointer;
     border-radius:5px;
+
+    @media(max-width:480px){
+        margin-left:0px;
+        width:100%;
+    }
+
 `
 
 const RecipesContainer = styled.div`
@@ -93,17 +123,30 @@ const RecipesContainer = styled.div`
     display:flex;
     flex-wrap:wrap;
     justify-content:space-around;
+
+    @media (min-width:1680px){
+        justify-content:center;
+    }
+
 `
 const TopRecipesHeading = styled.h3`
     font-size:18px;
     margin-bottom:20px;
     text-transform:uppercase;
     color:var(--secondary-color);
+
+    @media(max-width:700px){
+        text-align:center;
+    }
 `
 const TopRecipesRow = styled.div`
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
+
+    @media(max-width:700px){
+        justify-content:center;
+    }
 `
 const RecipeItem = styled.span`
     border-radius:5px;
@@ -112,6 +155,10 @@ const RecipeItem = styled.span`
     border:1px solid gainsboro;
     padding:2px 10px;
     font-size:15px;
+
+    @media(max-width:700px){
+        margin-right:8px;
+    }
 `
 const NoResultsWrapper = styled.div`
     padding:0px 10px;

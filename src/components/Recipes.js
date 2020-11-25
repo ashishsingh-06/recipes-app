@@ -33,6 +33,17 @@ const RecipesCard = styled.div`
     margin-bottom:40px;
     width:250px;
     cursor:pointer;
+    padding:10px;
+
+    @media(max-width:768px){
+        width:50%;
+        padding:0px 10px;
+    }
+
+    @media(min-width:769px) and (max-width:1200px){
+        width:33.3%;
+        padding:10px;
+    }
 `
 const RecipesCardBody = styled.div`
     position:relative;
@@ -55,8 +66,11 @@ const RecipesImageWrapper = styled.div`
     width:100%;
     border-radius:10px;
     height:150px;
-    object-fit:cover;
     overflow:hidden;
+
+    @media(max-width:480px){
+        height:140px;
+    }
 `
 const RecipesImage = styled.img`
     width:100%;
@@ -81,4 +95,7 @@ const RecipesSource = styled.h4`
     font-size:14px;
     font-weight:normal;
     color: var(--sub-heading-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `

@@ -26,9 +26,6 @@ function Navbar(){
                 </ul>
             </NavbarLeft>
             <ul>
-                <NavbarListItem>
-
-                </NavbarListItem>
             </ul>
         </NavbarContainer>
     )
@@ -41,9 +38,13 @@ const NavbarContainer = styled.div`
     margin:0 auto;
     padding:10px 0;
     display:flex;
+    
+    @media(max-width:480px){
+        max-width:90%;
+    }
 ` 
 const NavbarLeft = styled.div`
-    width:50%;
+    width:100%;
     display:flex;
     justify-content: space-between;
 `
@@ -52,11 +53,20 @@ const Brand = styled(Link)`
     color: var(--primary-color);
     font-family: var(--font-pacific);
     font-size: 30px;
+
+    @media(max-width:480px){
+        font-size:25px;
+    }
+
 `
 const NavbarListItem = styled.li`
     display:inline-block;
     line-height:3.8;
     margin-left:25px;
+
+    @media(max-width:480px){
+        display:none;   
+    }
 `
 const NavbarLink = styled(Link)`
     font-size:16px;

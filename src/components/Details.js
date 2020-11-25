@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {v4 as uuid4} from 'uuid';
 import styled from 'styled-components';
@@ -11,8 +11,12 @@ function Details(){
     let totalTime = Math.floor(Math.random()*80);
     const yields = context.recipeItem.recipe.yield;
 
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
+
     return(
-        <div className="container">
+        <div className="container" data-aos="fade-right">
             <DetailsButtonWrapper>
                 <Link to="/">
                     <BackButton><i className="fa fa-arrow-left"></i> Go Back</BackButton>
@@ -83,6 +87,10 @@ const DetailsButtonWrapper = styled.div`
     display:flex;
     justify-content: flex-end;
     padding:30px 0px;
+
+    @media(max-width:768px){
+        padding:10px 0px 40px 0px;   
+    }
 `
 
 const BackButton = styled.button`
@@ -91,6 +99,10 @@ const BackButton = styled.button`
     font-size:16px;
     color:white;
     background-color:var(--primary-color);
+
+    @media(max-width:768px){
+        font-size:14px;    
+    }
 `
 
 // sub list 
@@ -128,9 +140,18 @@ const DetailsWrapper = styled.div`
 
 const DetailsRow = styled.div`
     display:flex;
+
+    @media(max-width:768px){
+        display:block;
+    }
 `
 const ImageContainer = styled.div`
     width:50%;
+
+    @media(max-width:768px){
+        width:100%;
+        text-align:center;   
+    }
 `
 const DetailsImage = styled.img`
     max-width:100%;
@@ -139,6 +160,16 @@ const DetailsImage = styled.img`
 const DetailsColumn = styled.div`
     padding:30px 50px;
     width:100%;
+
+    @media(max-width:768px){
+        text-align:center;   
+        padding:30px 0px;
+    }
+
+    @media(min-width:769px) and (max-width:1200px){
+        padding:10px 50px;
+    }
+
 `
 
 const DetailsLabel = styled.h1`
@@ -146,6 +177,10 @@ const DetailsLabel = styled.h1`
     margin-bottom:10px;
     font-weight:normal;
     color: var(--solid-black);
+
+    @media(max-width:768px){
+        font-size:30px;   
+    }
 `
 const DetailsSource = styled.h3`
     font-weight:normal;
@@ -157,15 +192,29 @@ const DetailsSource = styled.h3`
 const IngredientsContainer = styled.div`
     display:flex;
     padding:50px 0px;
+
+    @media(max-width:768px){
+        display:block;
+    }
 `
 
 const HowToMakeWrapper = styled.div`
     padding-right:150px;
     width:70%;
+
+    @media(max-width:768px){
+        padding-right:0px;
+        width:100%;   
+        margin-bottom:30px;   
+    }
 `
 
 const IngredientsWrapper = styled.div`
     width:30%;
+
+    @media(max-width:768px){
+        width:100%;
+    }
 `
 
 const IngredientsHeading = styled.h4`
@@ -173,6 +222,10 @@ const IngredientsHeading = styled.h4`
     margin-bottom:20px;
     color:var(--secondary-color);
     font-weight:600;
+
+    @media(max-width:768px){
+        margin-bottom:5px;   
+    }
 `
 
 const IngredientListItem = styled.li`

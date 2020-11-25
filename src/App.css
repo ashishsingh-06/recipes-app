@@ -82,3 +82,13 @@ section,footer{
 .border-right{
   border-right: 1px solid gainsboro;
 }
+
+@media (max-width:480px){
+  .container{
+    max-width: 90%;
+  }
+  .social-icons{
+    font-size: 21px;
+    line-height: 2.2;
+  }
+}

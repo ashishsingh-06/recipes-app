@@ -17,7 +17,6 @@ const Context=(props)=>{
     // fetch api data
     const getData = async () =>{
         const result = await axios.get(URL);
-        console.log(result);
         if(result.data.hits.length<1){
             setnoResult(true);
         }

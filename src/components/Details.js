@@ -77,7 +77,6 @@ function Details(){
                     </ul>
                 </IngredientsWrapper>
             </IngredientsContainer>
-            
         </div>
     )
 }

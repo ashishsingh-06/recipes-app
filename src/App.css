@@ -83,6 +83,10 @@ section,footer{
   border-right: 1px solid gainsboro;
 }
 
+.nav-button{
+ 
+}
+
 @media (max-width:480px){
   .container{
     max-width: 90%;

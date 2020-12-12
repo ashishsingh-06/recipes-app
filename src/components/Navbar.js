@@ -14,7 +14,7 @@ function Navbar(){
                         <NavbarLink to='/'>Home</NavbarLink>
                     </NavbarListItem>
                     <NavbarListItem>
-                        <NavbarLink to='/about'>About</NavbarLink>
+                        <NavbarLink to='/'>About</NavbarLink>
                     </NavbarListItem>
                     <NavbarListItem>
                         <NavbarLink to='/'>Recipes</NavbarLink>
@@ -22,7 +22,9 @@ function Navbar(){
                     <NavbarListItem>
                         <NavbarLink to='/'>Contact</NavbarLink>
                     </NavbarListItem>
-
+                    <NavbarListItem>
+                        <NavbarButton to='/'>Sign Up/Sign In</NavbarButton>
+                    </NavbarListItem>
                 </ul>
             </NavbarLeft>
             <ul>
@@ -64,7 +66,7 @@ const NavbarListItem = styled.li`
     line-height:3.8;
     margin-left:25px;
 
-    @media(max-width:480px){
+    @media(max-width:780px){
         display:none;   
     }
 `
@@ -76,4 +78,11 @@ const NavbarLink = styled(Link)`
     &:hover{
         color: var(--primary-color);
     }
+`
+
+const NavbarButton = styled(Link)`
+    padding: 4px 8px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: white;
 `
